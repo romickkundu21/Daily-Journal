@@ -1,0 +1,19 @@
+<%- include('partials/header.ejs') -%>
+
+<h2>Home</h2>
+
+<p><%=homeStartContent%></p>
+
+<%posts.forEach(function(post){%>
+    <h2><%=post.postText%></h2>
+    <%if (post.postDesc.length > 100) {%>
+        <p><%=(post.postDesc.substring(0, 100) + "...")%>
+        <a href="/posts/<%=post.postText%>">Read more</a></p>
+    <%}else{%>
+        <p><%=post.postDesc%></p>
+    <%}%>
+<%})%>
+
+<%- include('partials/footer') -%>
+
+<!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odio maxime laboriosam nihil quidem delectus repudiandae aperiam, dolore accusamus deserunt, magni rerum. Quod, illo repudiandae. Tenetur ex, ut voluptatem culpa odio sit laudantium ducimus iusto possimus dolor, non totam officiis accusamus! Odio suscipit vitae exercitationem! Velit, ratione. Veniam laudantium sunt recusandae magnam illum distinctio non magni vero rem tenetur! -->
